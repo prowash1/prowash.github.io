@@ -6,7 +6,8 @@
 <title>PROWASH express</title>
 
 <style>
-/* 🌌 Background futuriste */
+
+/* 🚗 BACKGROUND CAR + DARK OVERLAY */
 body {
     margin: 0;
     height: 100vh;
@@ -14,51 +15,80 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #0f172a, #1e3a8a, #3b82f6);
-    background-size: 300% 300%;
-    animation: gradientMove 10s ease infinite;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
+        url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    animation: zoomBg 20s ease infinite alternate;
 }
 
-/* animation background */
-@keyframes gradientMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+/* subtle zoom animation */
+@keyframes zoomBg {
+    from { background-size: 100%; }
+    to { background-size: 110%; }
 }
 
-/* 🧊 Glass card */
+/* 🧊 GLASS CARD */
 .container {
     backdrop-filter: blur(15px);
     background: rgba(255,255,255,0.08);
-    border-radius: 20px;
-    padding: 25px;
-    width: 350px;
+    border-radius: 25px;
+    padding: 30px;
+    width: 360px;
     text-align: center;
-    box-shadow: 0 0 30px rgba(59,130,246,0.5);
+    box-shadow: 0 0 40px rgba(59,130,246,0.4);
     border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* 🖼 Logo */
+/* 🔥 TOP GLOW */
+.top-glow {
+    height: 4px;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    border-radius: 10px;
+}
+
+/* 🖼 LOGO */
 .logo {
     width: 140px;
-    height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     filter: drop-shadow(0 0 15px #3b82f6);
 }
-/* 📝 Title */
+
+/* 📝 TITLE */
 h1 {
-    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ffffff, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(59,130,246,0.6);
+}
+
+/* tagline */
+.tagline {
+    color: #cbd5f5;
+    font-size: 14px;
     margin-bottom: 20px;
 }
 
-/* subtitle */
+/* section */
 .subtitle {
     color: #cbd5f5;
     text-align: left;
     margin-bottom: 10px;
 }
 
-/* 🔗 links */
+/* 🔗 LINKS */
 .link {
     display: flex;
     align-items: center;
@@ -72,18 +102,20 @@ h1 {
     border: 1px solid rgba(255,255,255,0.15);
     transition: 0.3s;
 }
-/* hover futuriste */
+
+/* hover effect */
 .link:hover {
-    background: rgba(59,130,246,0.2);
-    box-shadow: 0 0 15px #3b82f6;
-    transform: translateY(-3px);
+    background: rgba(59,130,246,0.3);
+    box-shadow: 0 0 20px #3b82f6;
+    transform: scale(1.03);
 }
 
-/* left side */
+/* left */
 .left {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-size: 18px;
 }
 
 /* icons */
@@ -98,20 +130,25 @@ h1 {
     font-size: 18px;
     opacity: 0.7;
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
+    <div class="top-glow"></div>
+
+    <!-- 🔥 YOUR LOGO -->
     <img src="PRO WASH (1).png" class="logo">
 
     <h1>PROWASH express</h1>
+    <p class="tagline">Car Wash • Fast • Professional</p>
 
     <div class="subtitle">Find me on</div>
 
+    <!-- WhatsApp -->
     <a class="link" href="https://wa.me/212657308755?text=Bonjour" target="_blank">
         <div class="left">
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
@@ -120,6 +157,7 @@ h1 {
         <div class="arrow">→</div>
     </a>
 
+    <!-- Instagram -->
     <a class="link" href="https://www.instagram.com/prowash.express" target="_blank">
         <div class="left">
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
@@ -128,6 +166,7 @@ h1 {
         <div class="arrow">→</div>
     </a>
 
+    <!-- TikTok -->
     <a class="link" href="https://www.tiktok.com/@prowash.express" target="_blank">
         <div class="left">
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
@@ -136,6 +175,7 @@ h1 {
         <div class="arrow">→</div>
     </a>
 
+    <!-- Facebook -->
     <a class="link" href="https://www.facebook.com/profile.php?id=61575408575642" target="_blank">
         <div class="left">
             <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
