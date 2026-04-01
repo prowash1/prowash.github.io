@@ -7,20 +7,23 @@
 
 <style>
 
-/* GLOBAL FIX */
+/* GLOBAL */
 * {
     box-sizing: border-box;
+}
+
+html {
+    background: #000; /* prevent white flash */
 }
 
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
-/* 🚗 BACKGROUND FULL SCREEN */
+/* 🚗 BACKGROUND FIXED */
 body {
-    min-height: 100vh;
+    min-height: 100dvh; /* FIX iPhone */
     font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
@@ -33,8 +36,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    overflow-x: hidden;
 }
 
 /* 🧊 CARD */
@@ -42,12 +43,13 @@ body {
     backdrop-filter: blur(15px);
     background: rgba(255,255,255,0.08);
     border-radius: 25px;
-    padding: 30px 20px;
+    padding: 25px 20px;
     width: 90%;
     max-width: 360px;
     text-align: center;
     box-shadow: 0 0 40px rgba(59,130,246,0.4);
     border: 1px solid rgba(255,255,255,0.2);
+    margin: 20px 0; /* prevent overflow */
 }
 
 /* 🔥 TOP GLOW */
@@ -87,15 +89,15 @@ body {
     z-index: 1;
 }
 
-/* 📱 MOBILE (BIG LOGO 🔥) */
+/* 📱 MOBILE (BIG LOGO) */
 @media (max-width: 500px) {
     .logo {
-        width: 240px; /* BIGGER */
+        width: 260px;
     }
 
     .logo-glow {
-        width: 280px;
-        height: 280px;
+        width: 300px;
+        height: 300px;
     }
 }
 
