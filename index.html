@@ -7,7 +7,7 @@
 
 <style>
 
-/* RESET */
+/* GLOBAL */
 * {
     box-sizing: border-box;
 }
@@ -57,23 +57,44 @@ body {
     border-radius: 10px;
 }
 
-/* 🖼 LOGO (TRANSPARENT + BIG) */
+/* 🌟 LOGO CONTAINER */
+.logo-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* 💡 GLOW DERRIÈRE LOGO */
+.logo-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(59,130,246,0.8), transparent 70%);
+    transform: translate(-50%, -50%);
+    filter: blur(25px);
+    z-index: 0;
+}
+
+/* 🖼 LOGO */
 .logo {
+    position: relative;
     width: 160px;
     max-width: 100%;
     height: auto;
-    margin-bottom: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background: transparent;
-    filter: drop-shadow(0 0 15px #3b82f6);
+    z-index: 1;
 }
 
-/* 📱 MOBILE LOGO BIGGER */
+/* 📱 MOBILE */
 @media (max-width: 500px) {
     .logo {
         width: 200px;
+    }
+
+    .logo-glow {
+        width: 220px;
+        height: 220px;
     }
 }
 
@@ -153,8 +174,11 @@ h1 {
 
     <div class="top-glow"></div>
 
-    <!-- LOGO -->
-    <img src="1.png" class="logo">
+    <!-- 🌟 LOGO AVEC GLOW -->
+    <div class="logo-container">
+        <div class="logo-glow"></div>
+        <img src="1.png" class="logo">
+    </div>
 
     <h1>PROWASH express</h1>
     <p class="tagline">Car Wash • Fast • Professional</p>
